@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: python-service
   template:
-    metadata:
+    metadata: 
       labels:
         app: python-service
     spec:

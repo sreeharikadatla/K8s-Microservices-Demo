@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+spec:
+  rules:
+  - host: node-service.local
+    http:
+      paths:
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service:
+            name: node-service
+            port:
+              number: 80
+  - host: python-service.local
+    http:
+      paths:
+      - path: /greet
+        pathType: Prefix
+        backend:
+          service:
+            name: python-service
+            port:
+              number: 80
